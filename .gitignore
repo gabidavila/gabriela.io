@@ -10,3 +10,6 @@ s3.conf
 node_modules
 /source/assets/*
 !/source/assets/.gitkeep
+/source/css
+!/source/css/style.css
+/source/js

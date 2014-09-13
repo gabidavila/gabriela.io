@@ -26,6 +26,9 @@
   "dependencies": {
     "bootstrap": "~3.2.0",
     "highlightjs": "~8.0.0",
-    "freelancer": "http://startbootstrap.com/downloads/freelancer.zip"
+    "freelancer": "http://startbootstrap.com/downloads/freelancer.zip",
+    "font-awesome": "~4.2.0",
+    "modernizr": "~2.8.3",
+    "jquery.easing.1.3": "http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"
   }
 }
