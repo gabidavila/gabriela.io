@@ -58,19 +58,32 @@ module.exports = function(grunt) {
             }
         },
         uglify: {
-            //...
+            options: {
+                // Grunt can replace variables names, but may not be a good idea for you,
+                // I leave this option as false
+                mangle: false
+            },
+            js: {
+                // Grunt will search for "**/*.js" when the "minify" task
+                // runs and build the appropriate src-dest file mappings then, so you
+                // don't need to update the Gruntfile when files are added or removed.
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= paths.js %>',
+                        src: '**/*.js',
+                        dest: '<%= paths.js %>',
+                        ext: '.min.js',
+                    }
+                ],
+            }
         },
-        phpunit: {
-            //...
-        },
-        watch: {
-            //...
-        }
     });
 
 // Plugin loading
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 // Task definition
-
+    grunt.registerTask('default', ['less', 'concat', 'uglify']);
 };
