@@ -1,0 +1,28 @@
+{
+  "name": "gabriela.io",
+  "version": "0.1.0",
+  "description": "My Personal Website",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:gabidavila/gabriela.io.git"
+  },
+  "keywords": [
+    "gabriela",
+    "davila"
+  ],
+  "author": "Gabriela D'Avila",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabidavila/gabriela.io/issues"
+  },
+  "homepage": "https://github.com/gabidavila/gabriela.io",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-less": "^0.11.4",
+    "npm": "^1.4.27",
+    "grunt-contrib-uglify": "^0.5.1",
+    "install": "^0.1.7"
+  }
+}

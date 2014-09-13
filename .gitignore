@@ -7,3 +7,6 @@
 /source/components/
 s3.conf
 .idea
+node_modules
+/source/assets/*
+!/source/assets/.gitkeep

@@ -1,0 +1,30 @@
+{
+  "name": "gabriela.io",
+  "version": "0.1.0",
+  "homepage": "https://github.com/gabidavila/gabriela.io",
+  "authors": [
+    "Gabriela D'Avila <me@gabriela.io>"
+  ],
+  "description": "my website",
+  "main": "index.html",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "gabriela",
+    "davila"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "source/assets",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "highlightjs": "~8.0.0"
+  }
+}
