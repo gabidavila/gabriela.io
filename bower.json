@@ -25,6 +25,7 @@
   ],
   "dependencies": {
     "bootstrap": "~3.2.0",
-    "highlightjs": "~8.0.0"
+    "highlightjs": "~8.0.0",
+    "freelancer": "http://startbootstrap.com/downloads/freelancer.zip"
   }
 }
