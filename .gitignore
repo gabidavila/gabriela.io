@@ -9,6 +9,8 @@ s3.conf
 .idea
 node_modules
 /source/assets/*
+!/source/assets/stylesheets/
+!/source/assets/javascripts/
 !/source/assets/.gitkeep
 /source/css
 !/source/css/style.css
