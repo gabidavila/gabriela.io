@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-md-6">
                 {% set year = '0' %}
-                <h3 class="text-center">Lastest Posts</h2>
+                <h3 class="text-center">Latest Posts</h2>
                     <ul class="post-list">
                         {% for post in page.pagination.items %}
                             {% set this_year %}{{ post.date | date("Y") }}{% endset %}

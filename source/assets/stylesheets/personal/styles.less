@@ -1,0 +1,54 @@
+// Variables
+@import "variables-freelancer";
+
+.link-white {
+  color: @navy;
+  font-weight: bold;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.navbar-default {
+  background-color: @navy;
+}
+
+.btn-success {
+  background-color: @green;
+  border-color: @green;
+
+  &:hover {
+    background-color: @darkergreen;
+    border-color: @darkergreen;
+  }
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+  color: white;
+  background-color: @green;
+}
+
+.navbar-default .navbar-nav>li>a {
+  &:hover {
+    color: @green;
+  }
+}
+
+.navbar-default .navbar-toggle {
+  border-color: white;
+  &:hover {
+    background-color: @green;
+  }
+  &:selected {
+    background-color: @green;
+  }
+}
+
+.post-list {
+  font-size: 140%;
+}
+
+.category-list {
+  font-size: 140%;
+}
