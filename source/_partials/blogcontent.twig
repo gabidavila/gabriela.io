@@ -11,13 +11,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h3 class="text-center">Categories</h3>
-
-            </div>
-            <div class="col-md-6">
                 {% set year = '0' %}
-                <h3 class="text-center">Last Posts</h2>
-                    <ul class="post_list">
+                <h3 class="text-center">Lastest Posts</h2>
+                    <ul class="post-list">
                         {% for post in page.pagination.items %}
                             {% set this_year %}{{ post.date | date("Y") }}{% endset %}
                             {% if year != this_year %}
@@ -30,11 +26,21 @@
 
                             {% endif %}
                             <li>
-                                <a href="{{ site.url }}{{ post.url }}" title="{{post.title}}">{{ post.date | date("F") }}
-                                    , {{ post.date | date("j") }}{{ post.date | date("S") }} - {{ post.title }}</a>
+                                <a href="{{ site.url }}{{ post.url }}" title="{{post.title}}">{{ post.date | date("F") }},
+                                     {{ post.date | date("j") }}{{ post.date | date("S") }} - {{ post.title }}</a>
                             </li>
                         {% endfor %}
                     </ul>
+            </div>
+            <div class="col-md-6">
+                <h3 class="text-center">Categories</h3>
+                <ul class="category-list list-unstyled text-center">
+                    {% for category,posts in data.posts_categories %}
+                        <li>
+                            <a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}">{{ category }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
 

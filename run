@@ -1,2 +1,2 @@
 grunt less
-sculpin generate --watch --server
+sculpin generate --watch --server --port=8081
