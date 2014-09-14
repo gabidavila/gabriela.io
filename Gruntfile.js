@@ -73,7 +73,7 @@ module.exports = function(grunt) {
                     compress: true,  //minifying the result
                 },
                 files: {
-                    //compiling styles.less into styles.min.css
+                    //compiling freelancer.less into freelancer.min.css
                     "<%= paths.css %>freelancer/freelancer.min.css":"<%= paths.assets.css %>freelancer/freelancer.less",
                     //compiling styles.less into styles.min.css
                     "<%= paths.css %>freelancer/styles.min.css":"<%= paths.assets.css %>freelancer/styles.less"
@@ -84,8 +84,10 @@ module.exports = function(grunt) {
                     compress: true,  //minifying the result
                 },
                 files: {
-                    //compiling styles.less into styles.min.css
-                    "<%= paths.css %>personal/freelancer.min.css":"<%= paths.assets.css %>personal/freelancer.less",
+                    //compiling bootstrap.less into bootstrap.min.css
+                    "<%= paths.css %>personal/bootstrap.min.css":"<%= paths.assets.css %>personal/bootstrap.less",
+                    //compiling personal.less into personal.min.css
+                    "<%= paths.css %>personal/personal.min.css":"<%= paths.assets.css %>personal/personal.less",
                     //compiling styles.less into styles.min.css
                     "<%= paths.css %>personal/styles.min.css":"<%= paths.assets.css %>personal/styles.less"
                 }

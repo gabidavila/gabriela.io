@@ -4,8 +4,8 @@
     <title>{% block title %}{{ page.title }}{% endblock %} &mdash; {{ site.title }} &mdash; {{ site.subtitle }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ site.url }}/assets/vendor/freelancer/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="{{ site.url }}/css/personal/freelancer.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ site.url }}/css/personal/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ site.url }}/css/personal/personal.min.css" rel="stylesheet" type="text/css"/>
     <link href="{{ site.url }}/css/personal/styles.min.css" rel="stylesheet" type="text/css"/>
 
     <link href="{{ site.url }}/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -27,13 +27,22 @@
         }
     </style>
 </head>
-<body id="page-top home" class="index">
+<body id="page-top home" class="index blog-page">
 
 {% include "personal/navbar.twig" %}
+<section id="blog" class="container">
+    <div class="row">
+        <div class="col-md-8 posts">
+            Gabriela Davila
+            ashasuha uhsa
+            sa ushau shu
+        </div>
+        <aside id="sidebar" class="col-md-4 pull-right">
 
-
-{% include "personal/footer.twig" %}
-
+        </aside>
+    </div>
+</section>
+{% include "footer.twig" %}
 
 {% include "personal/footer_scripts.twig" %}
 
