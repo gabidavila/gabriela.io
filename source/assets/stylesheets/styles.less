@@ -1,8 +1,31 @@
+// Variables
+@import "variables-freelancer.less";
+
 .link-white {
-  color: #2c3e50;
+  color: @navy;
   font-weight: bold;
 
   &:hover {
     color: black;
+  }
+}
+
+.navbar-default {
+  background-color: @navy;
+}
+
+.btn-success {
+  background-color: @green;
+  border-color: @green;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+  color: white;
+  background-color: @green;
+}
+
+.navbar-default .navbar-nav>li>a {
+  &:hover {
+    color: @green;
   }
 }
