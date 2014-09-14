@@ -3,3 +3,28 @@
 # in a template to get the contents of the `title` key.
 title: gabriela.IO
 subtitle: ideas in and out!
+author:
+  pic: "https://pbs.twimg.com/profile_images/490972733891551232/WNWTU7or.jpeg"
+  name: "Gabriela D'Ávila"
+  title: "Software Engineer, Lego fan."
+  lego: 19820
+
+social:
+  0:
+    name: "Github"
+    link: "http://www.github.com/gabidavila"
+    icon: "github"
+  1:
+    name: "Twitter"
+    link: "http://twitter.com/gabidavila"
+    icon: "twitter"
+  2:
+    name: "Linkedin"
+    link: "http://linkedin.com/in/gabrieladavila/"
+    icon: "linkedin"
+  3:
+    name: "Google Plus"
+    link: "http://plus.google.com/+GabrielaDÁvila00"
+    icon: "google-plus"
+
+
