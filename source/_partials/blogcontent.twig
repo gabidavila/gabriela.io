@@ -8,4 +8,36 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="text-center">Categories</h3>
+
+            </div>
+            <div class="col-md-6">
+                {% set year = '0' %}
+                <h3 class="text-center">Last Posts</h2>
+                    <ul class="post_list">
+                        {% for post in page.pagination.items %}
+                            {% set this_year %}{{ post.date | date("Y") }}{% endset %}
+                            {% if year != this_year %}
+                                {% set month = '0' %}
+                                {% set year = this_year %}
+                            {% endif %}
+                            {% set this_month %}{{ post.date | date("F") }}{% endset %}
+                            {% if month != this_month %}
+                                {% set month = this_month %}
+
+                            {% endif %}
+                            <li>
+                                <a href="{{ site.url }}{{ post.url }}" title="{{post.title}}">{{ post.date | date("F") }}
+                                    , {{ post.date | date("j") }}{{ post.date | date("S") }} - {{ post.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+            </div>
+        </div>
+
+    </div>
+
 </section>

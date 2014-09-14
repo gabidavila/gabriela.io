@@ -19,8 +19,14 @@
                     </ul>
                 </div>
                 <div class="footer-col col-md-4">
-                    <h3>About Freelancer</h3>
-                    <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    <h3>I Recommend</h3>
+                    <ul class="blogroll list-unstyled">
+                        {% for key, site in site.blogroll %}
+                            <li>
+                                <a href="{{site.url}}" title="{{site.name}}">{{site.name}}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
         </div>
