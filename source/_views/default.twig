@@ -5,9 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ site.url }}/assets/vendor/freelancer/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <!--<link href="{{ site.url }}/css/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
-    <link href="{{ site.url }}/css/freelancer.min.css" rel="stylesheet" type="text/css"/>
-    <link href="{{ site.url }}/css/styles.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ site.url }}/css/freelancer/freelancer.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ site.url }}/css/freelancer/styles.min.css" rel="stylesheet" type="text/css"/>
 
     <link href="{{ site.url }}/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -30,7 +29,7 @@
 </head>
 <body id="page-top home" class="index">
 
-{% include "navbar.twig" %}
+{% include "freelancer/navbar.twig" %}
 
 <!-- Header -->
 <header>
@@ -50,7 +49,7 @@
     </div>
 </header>
 
-{% include "blogcontent.twig" %}
+{% include "freelancer/blogcontent.twig" %}
 
 <!-- About Section -->
 <section class="success" id="about">
@@ -79,13 +78,15 @@
     </div>
 </section>
 
-{% include "contact.twig" %}
+{% include "freelancer/contact.twig" %}
 
-{% include "footer.twig" %}
+{% include "freelancer/footer.twig" %}
 
-{% include "portfolio.twig" %}
+{% include "freelancer/portfolio.twig" %}
 
-{% include "footer_scripts" %}
+{% include "freelancer/footer_scripts.twig" %}
+
+{% include "google.twig" %}
 
 </body>
 

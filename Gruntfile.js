@@ -13,49 +13,50 @@ module.exports = function(grunt) {
                 vendor: './source/assets/vendor/'
             },
             template : {
-                files: './source/assets/vendor/freelancer/'
+                freelancer: './source/assets/vendor/freelancer/'
             },
             // Production where Grunt output the files
             css: './source/css/',
             js: './source/js/'
-
         },
 
         // Task configuration
         concat: {
-            options: {
-                separator: ';',
-            },
-            js_header: {
-                src: [
-                    '<%= paths.assets.js %>custom.js'
-                ],
-                dest: '<%= paths.js %>/scripts_header.js',
-            },
-            js_footer: {
-                src: [
-                    '<%= paths.assets.vendor %>jquery/dist/jquery.js',
-                    '<%= paths.assets.vendor %>bootstrap/dist/js/bootstrap.js',
-                    '<%= paths.assets.vendor %>jquery.easing.1.3/index.js',
-                    '<%= paths.template.files %>js/classie.js',
-                    '<%= paths.template.files %>js/cbpAnimatedHeader.js',
-                    '<%= paths.template.files %>js/jqBootstrapValidation.js',
-                    '<%= paths.template.files %>js/contact_me.js',
-                    '<%= paths.template.files %>js/freelancer.js'
-                ],
-                dest: '<%= paths.js %>scripts_footer.js',
-            }
+           // freelancer: {
+                options: {
+                    separator: ';',
+                },
+                js_header: {
+                    src: [
+                        '<%= paths.assets.js %>freelancer/custom.js'
+                    ],
+                    dest: '<%= paths.js %>freelancer/scripts_header.js',
+                },
+                js_footer: {
+                    src: [
+                        '<%= paths.assets.vendor %>jquery/dist/jquery.js',
+                        '<%= paths.assets.vendor %>bootstrap/dist/js/bootstrap.js',
+                        '<%= paths.assets.vendor %>jquery.easing.1.3/index.js',
+                        '<%= paths.template.freelancer %>js/classie.js',
+                        '<%= paths.template.freelancer %>js/cbpAnimatedHeader.js',
+                        '<%= paths.template.freelancer %>js/jqBootstrapValidation.js',
+                        '<%= paths.template.freelancer %>js/contact_me.js',
+                        '<%= paths.template.freelancer %>js/freelancer.js'
+                    ],
+                    dest: '<%= paths.js %>freelancer/scripts_footer.js',
+                }
+            //}
         },
         less: {
-            default: {
+            freelancer: {
                 options: {
                     compress: true,  //minifying the result
                 },
                 files: {
                     //compiling styles.less into styles.min.css
-                    "<%= paths.css %>freelancer.min.css":"<%= paths.assets.css %>freelancer.less",
+                    "<%= paths.css %>freelancer/freelancer.min.css":"<%= paths.assets.css %>freelancer/freelancer.less",
                     //compiling styles.less into styles.min.css
-                    "<%= paths.css %>styles.min.css":"<%= paths.assets.css %>styles.less"
+                    "<%= paths.css %>freelancer/styles.min.css":"<%= paths.assets.css %>freelancer/styles.less"
                 }
             }
         },
