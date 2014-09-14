@@ -53,6 +53,8 @@ module.exports = function(grunt) {
                 },
                 files: {
                     //compiling styles.less into styles.min.css
+                    "<%= paths.css %>freelancer.min.css":"<%= paths.assets.css %>freelancer.less",
+                    //compiling styles.less into styles.min.css
                     "<%= paths.css %>styles.min.css":"<%= paths.assets.css %>styles.less"
                 }
             }
