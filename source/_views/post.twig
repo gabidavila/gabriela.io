@@ -1,0 +1,57 @@
+{% extends "entry" %}
+
+{% block content_wrapper %}
+
+    <article>
+        <div class="blog-post">
+            <h2 class="blog-post-title">{{ page.title }}</h2>
+
+            <p class="blog-post-meta">
+                <span class="label label-success"><i
+                            class="fa fa-calendar"></i> {{ page.date|date(site.default_date_format) }}</span>
+                <a href="#" class="label label-warning"><i class="fa fa-user"></i> {{ page.author }}</a>
+
+                {% if page.categories %}
+                    {% for category in page.categories %}
+                    <a class="label label-primary" href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}"
+                       title="{{ category }}"><i class="fa fa-folder-open-o"></i> {{ category }}
+                        </a>{% if not loop.last %} {% endif %} &nbsp;
+                    {% endfor %}
+                {% endif %}
+            </p>
+            {{ page.blocks.content|raw }}
+            <hr>
+            {% if page.tags %}
+                <p class="tags">
+                    <i class="fa fa-tag"></i> Tags:
+                    {% for tag in page.tags %}
+                        <a class="label label-info" href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}"
+                           title="{{ tag }}">{{ tag }}</a>{% if not loop.last %} {% endif %}
+                    {% endfor %}
+                </p>
+            {% endif %}
+        </div>
+        <!-- /.blog-post -->
+    </article>
+
+    {% if page.previous_post or page.next_post %}
+        <nav class="article">
+            <ul class="pager">
+                {% if page.previous_post %}
+                    <li> <a class="previous" href="{{ site.url }}{{ page.previous_post.url }}"
+                            title="Previous"><i class="fa fa-arrow-circle-left fa-lg"></i> Previous</a></li>
+                {% endif %}
+                {% if page.next_post %}
+                    <li class="pull-right"><a class="next" href="{{ site.url }}{{ page.next_post.url }}"
+                                 title="Next">Next <i class="fa fa-arrow-circle-right fa-lg"></i></a></li>
+                {% endif %}
+
+            </ul>
+        </nav>
+    {% endif %}
+
+    <div class="comments">
+        {% include 'disqus.twig' %}
+    </div>
+
+{% endblock %}

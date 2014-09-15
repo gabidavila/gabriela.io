@@ -1,13 +1,17 @@
 ---
-layout: default
+layout: entry
 title: Categories
 use:
     - posts_categories
 ---
-<h2>Categories</h2>
 
-<div>
-{% for category,posts in data.posts_categories %}
-<a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}">{{ category }}</a>
-{% endfor %}
+<div class="blog-post">
+    <h2><i class="fa fa-folder-open-o"></i> Categories</h2>
+    <ul>
+        {% for category,posts in data.posts_categories %}
+        <li>
+            <a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}">{{ category }}</a>
+        </li>
+        {% endfor %}
+    </ul>
 </div>

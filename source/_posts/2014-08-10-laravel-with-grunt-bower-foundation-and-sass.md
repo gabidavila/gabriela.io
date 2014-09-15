@@ -10,6 +10,9 @@ tags:
     - sass
     - grunt
     - foundation
+use:
+  - posts_tags
+  - posts_categories
 ---
 
 I needed to use Grunt and Bower with Laravel for a project. So, I did some digging, and found [Harianto van Insulide](http://blog.mdstn.com/using-laravel-grunt-bootstrap-and-less) tutorial. He used somethings similar with what I needed, so I followed his tutorial and made my own modifications. So this is the result!
@@ -22,8 +25,9 @@ I needed to use Grunt and Bower with Laravel for a project. So, I did some diggi
 
 If you don't have composer installed, just enter the following:
 
-    $ curl -sS https://getcomposer.org/installer | php
-
+~~~command
+$ curl -sS https://getcomposer.org/installer | php
+~~~
 ### Ruby/Sass
 
 If you use Windows , you need to download **ruby**: [https://www.ruby-lang.org/pt/downloads/](https://www.ruby-lang.org/pt/downloads/).
@@ -440,7 +444,7 @@ Running the tests: `grunt phpunit`
 
 Bellow the output:
 
-[![Gruntfile_js_-_laravel_-____PhpstormProjects_tutorial_laravel_](http://s3.davila.blog.br/wp-content/uploads/sites/2/2014/08/Gruntfile_js_-_laravel_-____PhpstormProjects_tutorial_laravel_1-1024x418.png)](http://s3.davila.blog.br/wp-content/uploads/sites/2/2014/08/Gruntfile_js_-_laravel_-____PhpstormProjects_tutorial_laravel_1.png)
+[![Gruntfile_js_-_laravel_-____PhpstormProjects_tutorial_laravel_](http://s3.davila.blog.br/wp-content/uploads/sites/2/2014/08/Gruntfile_js_-_laravel_-____PhpstormProjects_tutorial_laravel_1-1024x418.png){.img-responsive .img-thumbnail}](http://s3.davila.blog.br/wp-content/uploads/sites/2/2014/08/Gruntfile_js_-_laravel_-____PhpstormProjects_tutorial_laravel_1.png)
 
 * * *
 

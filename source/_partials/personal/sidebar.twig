@@ -1,0 +1,31 @@
+<div class="sidebar-module sidebar-module-inset alert alert-info darkblue">
+    <h4><strong>About</strong></h4>
+    <p>I've been working with technology for a while (I am <b>not</b> sharing my age!), and I love it! I
+        majored in Digital Game Development by <a href="//fatec.br/" class="link-white"
+                                                  title="Factec">FATEC</a>. But that is not my ocupation: I
+        work as a web developer, for more information you can access my Linkedin Profile.</p>
+    <hr>
+    <p>Passions: technology, legos (I am a proud owner of {{ site.author.lego }} pieces), HBO series and
+        opensource.</p>
+
+    <p>Also, I am a diversity advocate, please check <a href="//wediversi.fi" class="link-white"
+                                                        title="weDiversifi">weDiversifi</a>.</p>
+</div>
+<div class="sidebar-module">
+    <h4><strong>Categories</strong></h4>
+    <ul class="arrow">
+        {% for category,posts in data.posts_categories %}
+            <li><a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}">{{ category }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="sidebar-module">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">search</button>
+                    </span>
+        </div>
+    </div>
+</div>

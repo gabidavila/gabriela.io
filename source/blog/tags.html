@@ -1,13 +1,15 @@
 ---
-layout: default
+layout: entry
 title: Tags
 use:
     - posts_tags
+    - posts_categories
 ---
-<h2>Tags</h2>
+<div class="blog-post">
+    <h2><i class="fa fa-folder-open-o"></i> Tags</h2>
 
-<div>
-{% for tag,posts in data.posts_tags %}
-<a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>
-{% endfor %}
+
+    {% for tag,posts in data.posts_tags %}
+    <a class="label label-info" href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>
+    {% endfor %}
 </div>
