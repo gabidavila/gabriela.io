@@ -1,6 +1,7 @@
 ---
 title: Laravel with Grunt, Bower, Foundation and Sass
 draft: false
+date: "2014-08-10"
 author: gabriela
 categories:
     - Tutorial
@@ -11,8 +12,8 @@ tags:
     - grunt
     - foundation
 use:
-  - posts_tags
-  - posts_categories
+    - posts_tags
+    - posts_categories
 ---
 
 I needed to use Grunt and Bower with Laravel for a project. So, I did some digging, and found [Harianto van Insulide](http://blog.mdstn.com/using-laravel-grunt-bootstrap-and-less) tutorial. He used somethings similar with what I needed, so I followed his tutorial and made my own modifications. So this is the result!

@@ -1,34 +1,62 @@
 ---
-layout: default
+layout: entry
 title: Home
 generator: pagination
 pagination:
-    max_per_page: 5
+max_per_page: 5
 use:
-    - posts
-    - posts_categories
+- posts
+- posts_tags
+- posts_categories
+
 ---
 {% for post in page.pagination.items %}
 <article>
-    <header>
-        <h2><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
-    </header>
-    <div>
+    <div class="blog-post">
+        <h2 class="blog-post-title"><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
+
+        <p class="blog-post-meta">
+                <span class="label label-success"><i
+                        class="fa fa-calendar"></i> {{ post.date|date(site.default_date_format) }}</span>
+            <a href="#" class="label label-warning"><i class="fa fa-user"></i> {{ post.author }}</a>
+
+            {% if post.categories %}
+            {% for category in post.categories %}
+            <a class="label label-primary" href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}"
+               title="{{ category }}"><i class="fa fa-folder-open-o"></i> {{ category }}
+            </a>{% if not loop.last %} {% endif %} &nbsp;
+            {% endfor %}
+            {% endif %}
+        </p>
         {{ post.blocks.content|raw }}
+        <hr>
+        {% if post.tags %}
+        <p class="tags">
+            <i class="fa fa-tag"></i> Tags:
+            {% for tag in post.tags %}
+            <a class="label label-info" href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}"
+               title="{{ tag }}">{{ tag }}</a>{% if not loop.last %} {% endif %}
+            {% endfor %}
+        </p>
+        {% endif %}
     </div>
-    {% if post.meta.tags %}
-    <p class="tags">
-        Tags:
-        {% for tag in post.meta.tags %}
-        <a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-        {% endfor %}
-    </p>
-    {% endif %}
+    <!-- /.blog-post -->
 </article>
 {% endfor %}
+
+
 {% if page.pagination.previous_page or page.pagination.next_page %}
-<nav>
-    {% if page.pagination.previous_page %}<a href="{{ site.url }}{{ page.pagination.previous_page.url }}">Newer Posts</a>{% endif %}<br />
-    {% if page.pagination.next_page %}<a href="{{ site.url }}{{ page.pagination.next_page.url }}">Older Posts</a>{% endif %}<br />
+<nav class="article">
+    <ul class="pager">
+        {% if page.pagination.previous_page %}
+        <li> <a class="previous" href="{{ site.url }}{{ page.pagination.previous_page.url }}"
+                title="Previous"><i class="fa fa-arrow-circle-left fa-lg"></i> Previous Page</a></li>
+        {% endif %}
+        {% if page.pagination.next_page %}
+        <li class="pull-right"><a class="next" href="{{ site.url }}{{ page.pagination.next_page.url }}"
+                                  title="Next">Next Page<i class="fa fa-arrow-circle-right fa-lg"></i></a></li>
+        {% endif %}
+
+    </ul>
 </nav>
 {% endif %}
