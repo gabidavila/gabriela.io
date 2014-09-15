@@ -19,7 +19,7 @@ fi
 # If you're comfortable with that, uncomment the line below:
 # rm -rf output_prod/*
 
-vendor/bin/sculpin generate --env=prod || ( echo "Could not generate the site" && exit )
+sculpin generate --env=prod || ( echo "Could not generate the site" && exit )
 
 S3CMD_PATH=`which s3cmd`
 if [ $? -ne 0 -o -z "$S3CMD_PATH" ]
