@@ -56,12 +56,7 @@ module.exports = function(grunt) {
                 src: [
                     '<%= paths.assets.vendor %>jquery/dist/jquery.js',
                     '<%= paths.assets.vendor %>bootstrap/dist/js/bootstrap.js',
-                    '<%= paths.assets.vendor %>jquery.easing.1.3/index.js',
-                    '<%= paths.template.personal %>js/classie.js',
-                    '<%= paths.template.personal %>js/cbpAnimatedHeader.js',
-                    '<%= paths.template.personal %>js/jqBootstrapValidation.js',
-                    '<%= paths.template.personal %>js/contact_me.js',
-                    '<%= paths.template.personal %>js/freelancer.js'
+                    '<%= paths.assets.vendor %>jquery.easing.1.3/index.js'
                 ],
                 dest: '<%= paths.js %>personal/scripts_footer.js',
             }

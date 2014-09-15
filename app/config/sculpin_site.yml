@@ -39,3 +39,10 @@ blogroll:
   2:
     name: "PHP Women"
     url: "http://phpomen.com"
+
+default_date_format: M d, Y
+
+authors:
+ gabriela:
+      name: "Gabriela D'Avila"
+      url: http://gabriela.io

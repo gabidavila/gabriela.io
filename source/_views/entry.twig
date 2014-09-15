@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{{ page.title }}{% endblock %} &mdash; {{ site.title }} &mdash; {{ site.subtitle }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link href="{{ site.url }}/assets/vendor/freelancer/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>-->
+    <link href="{{ site.url }}/css/personal/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ site.url }}/css/personal/personal.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ site.url }}/css/personal/styles.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="{{ site.url }}/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="{{ site.url }}/components/highlightjs/styles/github.css" />
+    <link rel="alternate" type="application/atom+xml" href="{{ site.url }}/atom.xml"
+          title="{{ site.title }} activity feed"/>
+    <style>
+        /** quick fix because bootstrap <pre> has a background-color. */
+        pre code {
+            background-color: inherit;
+        }
+    </style>
+</head>
+<body id="page-top home" class="index blog-page">
+
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">gabriela.io</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Home</a></li>
+                    <li class="active"><a href="#">Blog</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+
+<section id="blog" class="light-bg">
+
+    <div class="container">
+
+        <div class="row blog">
+
+            <div class="col-sm-8 blog-main">
+
+                {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+
+                <div class="comments">
+                    {% include 'disqus.twig' %}
+                </div>
+
+            </div><!-- /.blog-main -->
+
+            <div class="col-sm-4 blog-sidebar">
+                <div class="sidebar-module sidebar-module-inset">
+                    <h4>About</h4>
+                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                </div>
+                <div class="sidebar-module">
+                    <h4>Archives</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="#">March 2014</a></li>
+                        <li><a href="#">February 2014</a></li>
+                        <li><a href="#">January 2014</a></li>
+                        <li><a href="#">December 2013</a></li>
+                        <li><a href="#">November 2013</a></li>
+                        <li><a href="#">October 2013</a></li>
+                        <li><a href="#">September 2013</a></li>
+                        <li><a href="#">August 2013</a></li>
+                        <li><a href="#">July 2013</a></li>
+                        <li><a href="#">June 2013</a></li>
+                        <li><a href="#">May 2013</a></li>
+                        <li><a href="#">April 2013</a></li>
+                    </ol>
+                </div>
+                <div class="sidebar-module">
+                    <h4>Elsewhere</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ol>
+                </div>
+            </div><!-- /.blog-sidebar -->
+
+        </div><!-- /.row -->
+
+    </div><!-- /.container -->
+</section>
+
+    {% include "footer.twig" %}
+
+    {% include "personal/footer_scripts.twig" %}
+
+
+</body>
+
+</html>
