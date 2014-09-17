@@ -3,6 +3,7 @@
 # in a template to get the contents of the `title` key.
 title: gabriela.IO
 subtitle: ideas in and out!
+url: http://gabriela.io
 blog_url: "http://localhost:8081/blog"
 author:
   pic: "https://pbs.twimg.com/profile_images/490972733891551232/WNWTU7or.jpeg"
