@@ -35,6 +35,6 @@ My Slides:
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/38433691" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/gabidavila/coding-like-a-girl" title="Coding like a Girl" target="_blank">Coding like a Girl</a> </strong> from <strong><a href="http://www.slideshare.net/gabidavila" target="_blank">Gabriela D&#x27;Ávila</a></strong> </div>
 
-**My Joindin feedback**: http://goo.gl/yy6lMf
+**My Joindin feedback**: [http://goo.gl/yy6lMf](http://goo.gl/yy6lMf)
 
-P.S.: I will be giving his talk over Hangouts on Air this Thursday, **September 18th, 2014**, link to the event here: http://goo.gl/IwiVD8
+P.S.: I will be giving his talk over Hangouts on Air this Thursday, **September 18th, 2014**, link to the event here: [http://goo.gl/IwiVD8](http://goo.gl/IwiVD8)
