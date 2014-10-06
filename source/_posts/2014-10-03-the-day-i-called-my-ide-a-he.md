@@ -47,7 +47,7 @@ The thing is, when you open a file, it scans all the references into it so you c
 
 ### The ‘he’ part
 
-I was talking to [Kayla Daniels](http://www.twitter.com/kayladnls) about this situation, and I said to her:
+So when I rant about this situation to Kayla, I said to her:
 
 > (…) the size is not the problem, because _he_ scans the whole file (…)
 
