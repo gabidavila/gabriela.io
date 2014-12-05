@@ -6,10 +6,10 @@ subtitle: ideas in and out!
 url: http://gabriela.io
 blog_url: "http://localhost:8081/blog"
 author:
-  pic: "https://pbs.twimg.com/profile_images/490972733891551232/WNWTU7or.jpeg"
+  pic: "http://gabriela.io/img/gabi.jpg"
   name: "Gabriela D'Ávila"
   title: "Software Engineer, Lego fan."
-  lego: 19820
+  lego: 24084
 
 social:
   0:

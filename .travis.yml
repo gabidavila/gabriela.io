@@ -16,3 +16,5 @@ install:
   - grunt
   - ./sculpin generate --env=prod
 
+script: publish.sh
+
