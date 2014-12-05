@@ -1,7 +1,18 @@
 language: php
 
 php:
-  - 5.3.3
   - 5.3
   - 5.4
   - 5.5
+
+install:
+  - curl -O https://download.sculpin.io/sculpin.phar
+  - chmod +x sculpin.phar
+  - mv sculpin.phar sculpin
+  - ./sculpin install
+  - npm install -g grunt-cli grunt grunt-contrib-concat grunt-contrib-less grunt-contrib-uglify
+  - npm install -g bower
+  - bower install
+  - grunt
+  - ./sculpin generate --env=prod
+
