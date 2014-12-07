@@ -41,7 +41,9 @@ This is not a system I commonly see in small softwares. Usually big companies us
 
 Although some market RDBMS come with tools to help with the data denormalization, this is not that common. You could say that an OLAP system read from one, or more, OLTP system. I know Firebird, SQL Server and Oracle all have computed columns, it is a nice way to have some preprocessed data in your database, and a computed column is a virtual column. MySQL and Postgres don't have that feature (it can take a toll on performance).
 
-Usually this kind of system comes with a lot of complex queries and grouping, most BI tools use an OLTP as their primary source. This system works with structured data with dimensions, it is often called a **data cube**.
+Because of that, it is much more complex to do the CRUD operations with this system. You can read really fast, but to update your fact table, you probably need to create an ETL (Extract, Transform, Load).
+
+Usually this kind of system comes with a lot of complex queries and grouping, most BI tools use an OLAP as their primary source. This system works with structured data with dimensions, it is often called a **data cube**.
 
 <a href="img/2014/12/oltp-olap.png" title="OLTP to OLAP" target="_blank">
 <img src="img/2014/12/oltp-olap.png" class="align-center img-responsive" alt="visio">
