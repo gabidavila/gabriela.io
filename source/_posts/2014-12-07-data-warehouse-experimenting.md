@@ -61,7 +61,7 @@ Most of the data presented is unstructured, so the challenge here is a way to an
 
 ## OLTP x OLAP x Big Data
 
-Although you can use an OLTP system without an OLAP, the inverse is not true, so it is not like you have to choose which one to use for your application, the only choice you have is to make is whether you need a data warehouse or not.
+Although you can use an OLTP system without an OLAP, the inverse is not true, so it is not like you have to choose which one to use for your application, the only choice you have to is make whether you need a data warehouse or not.
 
 In a way a Big Data could take over a OLAP cube, but I think there is a long path to be followed before that, and again, the costs are pretty different from one to another.
 
