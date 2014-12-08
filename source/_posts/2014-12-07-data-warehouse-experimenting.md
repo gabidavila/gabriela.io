@@ -47,8 +47,8 @@ Because of that, it is much more complex to do the CRUD operations with this sys
 
 Usually this kind of system comes with a lot of complex queries and grouping, most BI tools (Pentaho, Tableau, etc.) use an OLAP as their primary source. This system works with structured data with dimensions, it is often called a **data cube**.
 
-<a href="img/2014/12/oltp-olap.png" title="OLTP to OLAP" target="_blank">
-<img src="img/2014/12/oltp-olap.png" class="align-center img-responsive" alt="visio">
+<a href="http://gabriela.io/img/2014/12/oltp-olap.png" title="OLTP to OLAP" target="_blank">
+<img src="http://gabriela.io/img/2014/12/oltp-olap.png" class="align-center img-responsive" alt="visio">
 </a>
 
 ##Big Data
@@ -67,7 +67,7 @@ In a way a Big Data could take over a OLAP cube, but I think there is a long pat
 
 ## Why Redshift?
 
-Amazon Redshift is an OLAP technology to work with an immense amount of data in a columnar way. It uses a Postgres storage, but this is not your typical Postgres database. And at the financial side is pretty much cheaper than Oracle and Microsoft solutions.
+Amazon Redshift is an OLAP technology used to work with an immense amount of data in a columnar way. It uses a Postgres storage, but this is not your typical Postgres database. And at the financial side is pretty much cheaper than Oracle and Microsoft solutions.
 
 You can create a cluster of databases with Redshift and have scalable and fast access with high I/O to get your data. Also integrates fairly easy with RDS and DynamoDB, but it is not exclusive to that.
 
