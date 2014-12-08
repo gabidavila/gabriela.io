@@ -18,7 +18,7 @@ use:
 
 <img src="http://www.thecomicstrips.com/properties/speedbump/art_images/sb1061208.jpg" class="pull-left" style="margin: 10px">
 
-I had the opportunity to work with a gamma of databases: [Firebird](http://www.firebirdsql.org/) (yeap!), [MySQL](http://www.mysql.com/), [Postgres](http://www.postgresql.org/), [Oracle](http://www.oracle.com/) and [SQL Server](http://www.microsoft.com/en-us/server-cloud/products/sql-server/default.aspx). And to count the NoSQL ones I was able to work with [MongoDB](http://www.mongodb.org/) and [DynamoDB](http://aws.amazon.com/dynamodb/).
+I had the opportunity to work with a variety of databases: [Firebird](http://www.firebirdsql.org/) (yeap!), [MySQL](http://www.mysql.com/), [Postgres](http://www.postgresql.org/), [Oracle](http://www.oracle.com/) and [SQL Server](http://www.microsoft.com/en-us/server-cloud/products/sql-server/default.aspx). And to count the NoSQL ones I was able to work with [MongoDB](http://www.mongodb.org/) and [DynamoDB](http://aws.amazon.com/dynamodb/).
 
 I have different opinions about each one of the above (note that I didn't include Access on the list, as far as I know, that is not a database). Also, it is not secret that I like Amazon AWS products, and using some of them daily I can see why each service can be magically integrated to achieve a goal.
 
