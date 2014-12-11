@@ -31,7 +31,7 @@ My goal right now is to get [Amazon Redshift](http://aws.amazon.com/redshift/) w
 
 Most applications work with an OLTP model. Because we learn that tables must be normalized to avoid data redundancy, one of the advantages this approach brings is the easiness to do a data change: operations of INSERT, UPDATE and DELETE are made without problems.
 
-So here we have our typical RDBMS databases or even NoSQL, but the most important thing to remember about OLTP is that it is *realtime*. The application interacts with it in real time.
+So here we have our typical RDBMS databases or even NoSQL, but the most important thing to remember about OLTP is that it is **realtime**. The application interacts with it in real time.
 
 Things start to get a little more complicated when even a simple report is needed and it takes forever to run a query or you have so much rows in that N x N table that is practically impossible to read it efficiently. For that, OLAP models support faster reads.
 
@@ -43,7 +43,7 @@ This is not a system I commonly see in small software companies, usually the big
 
 Although some market RDBMS come with tools to help with the data denormalization, this is not that common. You could say that an OLAP system reads from one, or more, OLTP systems. I know Firebird, SQL Server and Oracle all have computed columns, it is a nice way to have some preprocessed data in your database, and a computed column is a virtual column. MySQL and Postgres don't have that feature (it can take a toll on performance).
 
-Because of that, it is much more complex to do the CRUD operations with this system. You can read really fast, but to update your fact table, you probably need to create an ETL (Extract, Transform, Load) process to import the information. Generally this process is automated and scheduled.
+The data here is summarized or grouped for analytical goals. Because of that, it is much more complex to do the CRUD operations with this system. You can read really fast, but to update your fact table, you probably need to create an ETL (Extract, Transform, Load) process to import the information. Generally this process is automated and scheduled.
 
 Usually this kind of system comes with a lot of complex queries and grouping, most BI tools (Pentaho, Tableau, etc.) use an OLAP as their primary source. This system works with structured data with dimensions, it is often called a **data cube**.
 
