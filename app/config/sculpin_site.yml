@@ -34,13 +34,13 @@ google_analytics_tracking_id: "UA-54774199-1"
 blogroll:
   0:
     name: "dev-human"
-    url: "http://www.dev-human"
+    url: "http://www.dev-human.com"
   1:
     name: "weDiversifi"
     url: "http://wwww.wediversi.fi"
   2:
     name: "PHP Women"
-    url: "http://phpomen.com"
+    url: "http://phpwomen.com"
 
 default_date_format: M d, Y
 
