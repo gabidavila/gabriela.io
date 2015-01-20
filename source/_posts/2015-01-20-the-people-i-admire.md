@@ -35,6 +35,6 @@ For the people that are reading this, know they are my anonymous saviors, my Ave
 
 <hr>
 <sub>
-<a name="1" class="sub"><strong>1</strong> - Grammatically speaking I remember in school that it was a unique case of a phrase without subject, that is was ugly thing called "OraÃ§Ãµes coordenadas assindÃ©ticas" which I means that are phrases that are not connected by any conjuctive, only by commas. In that case they were only verbs, in the case of the English language it would be literally "Came, Saw, Conquered", which does not make any sense, because if the verbs were conjugated in the correct way, it would mean to be a set of orders, in another words, it would be in the Imperative.
+<a name="1" class="sub"><strong>1</strong> - Grammatically speaking I remember in school that it was a unique case of a phrase without subject, that is was ugly thing called "Orações coordenadas assindéticas" which I means that are phrases that are not connected by any conjuctive, only by commas. In that case they were only verbs, in the case of the English language it would be literally "Came, Saw, Conquered", which does not make any sense, because if the verbs were conjugated in the correct way, it would mean to be a set of orders, in another words, it would be in the Imperative.
 </a>
 </sub>
