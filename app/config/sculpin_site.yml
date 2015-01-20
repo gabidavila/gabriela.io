@@ -4,7 +4,7 @@
 title: gabriela.IO
 subtitle: ideas in and out!
 url: http://gabriela.io
-blog_url: "http://localhost:8081/blog"
+blog_url: "http://gabriela.io/blog"
 author:
   pic: "http://gabriela.io/img/gabi.jpg"
   name: "Gabriela D'Ávila"
@@ -46,5 +46,5 @@ default_date_format: M d, Y
 
 authors:
  gabriela:
-      name: "Gabriela D'Avila"
+      name: "Gabriela D'Ávila"
       url: http://gabriela.io
