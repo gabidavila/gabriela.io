@@ -21,7 +21,7 @@ For me that phrase always gave me goose bumps, like everything is possible if yo
 
 Because of that, this was my first tattoo:
 
-<img class="img-responsive img-circle" src="http://photos-b.ak.instagram.com/hphotos-ak-xaf1/t51.2885-15/10919466_593227607474913_660654603_n.jpg">
+<img class="img-responsive img-circle col-md-4" src="http://photos-b.ak.instagram.com/hphotos-ak-xaf1/t51.2885-15/10919466_593227607474913_660654603_n.jpg">
 
 **And I wanna go, I wanna see and I wanna conquer.**
 
