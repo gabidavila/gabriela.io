@@ -2,6 +2,42 @@
 
 {% block content_wrapper %}
 
-    teste
+    <article>
+        <div class="blog-post">
+            <h2 class="blog-post-title">Talk: {{ page.title }}</h2>
+
+            <p class="blog-post-meta">
+                <span class="label label-danger"><i
+                            class="fa fa-calendar"></i> {{ page.date|date(site.default_date_format) }}</span>
+                <span class="label label-warning black"><i class="fa fa-user"></i> {{ page.author }}</span>
+                <span class="label label-danger darkblue">{{ page.city }} - {{ page.country }} &nbsp;&nbsp;<img
+                            src="/img/flags/{{ page.country | lower }}.png" alt="{{ page.country }}"></span>
+            </p>
+            <blockquote class="conference-title"><b>Conference: </b> {{ page.conference }}</blockquote>
+            {{ page.blocks.content|raw }}
+
+            {% if page.slideshare_link %}
+                <div class="slideshare text-center">
+                        <iframe src="//www.slideshare.net/slideshow/embed_code/{{ page.slideshare_id }}" width="599"
+                            height="487"
+                            frameborder="0" marginwidth="0" marginheight="0" scrolling="no"
+                            style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;"
+                            allowfullscreen></iframe>
+                    <div style="margin-bottom:5px"><strong> <a href="{{ page.slideshare_link }}"
+                                                               title="Coding like a Girl"
+                                                               target="_blank">{{ page.title }}</a> </strong>
+                    </div>
+                </div>
+            {% endif %}
+
+            <hr>
+            {% if page.joindin %}
+                <b>Joindin Reviews</b>: <a href="{{ page.joindin }}" rel="Joindin review of {{ page.title }}"><i
+                        class="fa fa-external-link"></i> {{ page.joindin }}</a>
+            {% endif %}
+
+        </div>
+        <!-- /.talks-entry -->
+    </article>
 
 {% endblock %}

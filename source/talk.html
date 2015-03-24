@@ -1,0 +1,33 @@
+---
+layout: talktemplate
+title: Talks Archive
+generator: pagination
+pagination:
+    provider: data.talks
+use:
+    - talks
+    - posts_categories
+
+---
+
+{% set year = '0' %}
+<h2>Talks Archive</h2>
+{% for talk in page.pagination.items %}
+<div class="blog-post">
+    {% set this_year %}{{ talk.date | date("Y") }}{% endset %}
+    {% if year != this_year %}
+    {% set month = '0' %}
+    {% set year = this_year %}
+    {% endif %}
+    {% set this_month %}{{ talk.date | date("F") }}{% endset %}
+    {% if month != this_month %}
+    {% set month = this_month %}
+    <h3><i class="fa fa-calendar"></i> {{ month }} {{ year }}</h3>
+    {% endif %}
+    <div class="category-post">
+        <a href="{{ site.url }}{{ talk.url }}"><i class="fa fa-check-square"></i> {{ talk.title }}</a>
+        ({{ talk.city }} - {{ talk.country }})
+        - <b>{{ talk.conference }}</b>
+    </div>
+</div>
+{% endfor %}

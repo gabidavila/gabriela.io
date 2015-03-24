@@ -2,4 +2,9 @@ sculpin_content_types:
     posts:
         permalink: blog/:year/:month/:day/:filename/
     talks:
-        permalink: talks/:filename/
+        permalink: talk/:slug_title/
+        singular_name: talk
+        type: path
+        path: _talks
+        enabled: true
+        layout: talk

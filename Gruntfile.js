@@ -18,20 +18,22 @@ module.exports = function(grunt) {
             },
             // Production where Grunt output the files
             css: './source/css/',
-            js: './source/js/'
+            js: './source/js/',
+            img: './source/img/',
+            flag_icons: './source/assets/vendor/famfamfam_flag_icons/png/'
         },
 
         // Task configuration
         concat: {
            // freelancer: {
                 options: {
-                    separator: ';',
+                    separator: ';'
                 },
                 freelancer_js_header: {
                     src: [
                         '<%= paths.assets.js %>freelancer/custom.js'
                     ],
-                    dest: '<%= paths.js %>freelancer/scripts_header.js',
+                    dest: '<%= paths.js %>freelancer/scripts_header.js'
                 },
                 freelancer_js_footer: {
                     src: [
@@ -44,13 +46,13 @@ module.exports = function(grunt) {
                         '<%= paths.template.freelancer %>js/contact_me.js',
                         '<%= paths.template.freelancer %>js/freelancer.js'
                     ],
-                    dest: '<%= paths.js %>freelancer/scripts_footer.js',
+                    dest: '<%= paths.js %>freelancer/scripts_footer.js'
                 },
             personal_js_header: {
                 src: [
                     '<%= paths.assets.js %>personal/custom.js'
                 ],
-                dest: '<%= paths.js %>personal/scripts_header.js',
+                dest: '<%= paths.js %>personal/scripts_header.js'
             },
             personal_js_footer: {
                 src: [
@@ -65,7 +67,7 @@ module.exports = function(grunt) {
         less: {
             freelancer: {
                 options: {
-                    compress: true,  //minifying the result
+                    compress: true  //minifying the result
                 },
                 files: {
                     //compiling freelancer.less into freelancer.min.css
@@ -76,7 +78,7 @@ module.exports = function(grunt) {
             },
             personal: {
                 options: {
-                    compress: true,  //minifying the result
+                    compress: true  //minifying the result
                 },
                 files: {
                     //compiling bootstrap.less into bootstrap.min.css
@@ -104,17 +106,30 @@ module.exports = function(grunt) {
                         cwd: '<%= paths.js %>',
                         src: '**/*.js',
                         dest: '<%= paths.js %>',
-                        ext: '.min.js',
+                        ext: '.min.js'
                     }
-                ],
+                ]
             }
         },
+        copy: {
+            main: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= paths.flag_icons %>',
+                        src: ['**/*.png'],
+                        dest: '<%= paths.img %>flags/'
+                    }
+                ]
+            }
+        }
     });
 
 // Plugin loading
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 // Task definition
     grunt.registerTask('default', ['less', 'concat', 'uglify']);
 };
