@@ -8,7 +8,7 @@ conference: Laracon EU 2014
 slideshare_link: http://www.slideshare.ndiversity-thumbnailet/gabidavila/coding-like-a-girl
 slideshare_id: 38433691
 thumbnail: /img/talk/diversity-thumbnail.png
-joindin: https://joind.in/talk/view/13377
+joindin: https://joind.in/talk/view/11684
 use:
     - posts_tags
     - posts_categories
