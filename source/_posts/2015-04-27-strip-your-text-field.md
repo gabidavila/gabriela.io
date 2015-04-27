@@ -25,7 +25,7 @@ If you use MySQL with a MyISAM engine, this may not be an issue for you, you can
 
 In that case you will only have trouble when it comes the time to add a new column or index to that table. As I said, when executing an `ALTER TABLE` statement, MySQL will create a new table with the new modifications and reinsert the data. Once I did this in a huge table with a TEXT field, it took 2 days. So, be careful.
 
-Maintenance can be an issue too and I had problems in the past with MyISAM corrupting table and losing a lot of data. In the new versions of MySQL, I think since the 5.1 version I didn't face that again.
+Maintenance can be an issue too and I had problems in the past with MyISAM corrupting table and losing a lot of data. In the new versions of MySQL things seems to have changed, I think since the 5.1 version I didn't face that again.
 
 ## Why the statement `LIKE` is so slow?
 
@@ -40,7 +40,7 @@ CREATE TABLE `options` (
 ) DEFAULT CHARSET=utf8;
 ```
 
-Well, one of the first things we learn when programming is that reading from the hard disk is costly while reading from the memory is super fast. For every row stored in a table like the one above, the field `value` will not be stored in line like the `id` value. It will store a reference to a file containing the actual data, MySQL stores 4MB of data into a TEXT field.
+Well, one of the first things we learn when programming is that reading from the hard disk is costly while reading from the memory is super fast. For every row stored in a table like the one above, the field `value` will not be stored inline like the `id` value. It will store a reference to a file containing the actual data, MySQL stores 4MB of data into a TEXT field.
 
 Having that in mind, every time you use a `LIKE` statement you are reading from your server disk, which is pretty slow (you can have a super server with high IOPS, but this is not the case for the majority). Unless you use the MyISAM engine and create a `FULLTEXT` index into the `value` field:
 
