@@ -13,7 +13,13 @@ use:
 - posts_tags
 - posts_categories
 ---
-TEXT fields are a nightmare. For you and for your server. It is slow to retrieve, and if you are doing searches on it, be prepared, things are too bumpy.
+#STRIP YOUR TEXT FIELD
+
+TEXT fields are a nightmare. For you and for your server. It is slow to retrieve, and if you are doing searches on it, be prepared, things are going to get bumpy.
+
+<p style="text-align:center">
+![Rigby Mad](http://gabriela.io/img/2015/04/rigby_pc.gif)
+</p>
 
 If you use MySQL with a MyISAM engine, this may not be an issue for you, you can create a `FULLTEXT` index, your only problem is if you want to add a new column, an alter table can take forever, since MySQL creates a new table and copies the old data to the new table. For those who uses MySQL with an InnoDB engine, prepare because, you'll have more issues. Indexes **can't** be `FULLTEXT` and if you do need an index  you must inform the length of it. It defeats the purpose of you doing the search in that field.
 
@@ -51,7 +57,11 @@ ADD FULLTEXT INDEX `ix_value` (`value` ASC);
 
 The best solution it is to use a search service like [Elastic](https://www.elastic.co) (previously known as ElasticSearch) or [CloudSearch](http://aws.amazon.com/cloudsearch/). This of course will add another layer to your application, but it is a good tradeoff.
 
-You will need to index the data through one of the services in an extra step of the table insert.
+You will need to index the data through one of the services in an extra step of the table insert. One thing for sure, the search will be FAST!
+
+<p style="text-align:center">
+![Jake omg](http://gabriela.io/img/2015/04/ohh_adventure_time.gif )
+</p>
 
 ### Making the retrieval fast (no search)
 
@@ -102,3 +112,6 @@ Keep this in mind: the first two proposed ideas need to add an extra step in the
 
 I recommend you read more about BLOB and TEXT fields performance and storage in this article from [Peter Zaitsev](http://www.percona.com/blog/2010/02/09/blob-storage-in-innodb/) in the Percona blog.
 
+<p style="text-align:center">
+![Jake and Finn, nice](http://gabriela.io/img/2015/04/nice_jake_and_fin.gif)
+</p>
