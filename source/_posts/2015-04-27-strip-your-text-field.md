@@ -85,7 +85,7 @@ CREATE TABLE `options_text` (
 ) Engine=MyISAM DEFAULT CHARSET=utf8;
 ```
 
-That way you can create a `FULLTEXT` index in the table, because it is MyISAM and still work with better data consistency provided by InnoDB.
+That way you can create a `FULLTEXT` index in the table, because it is MyISAM and still be able to work with better data consistency provided by InnoDB.
 
 To retrieve it, a `INNER JOIN` or `LEFT JOIN` between the two tables:
 
