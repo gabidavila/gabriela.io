@@ -23,6 +23,7 @@
         {% for category,posts in data.posts_categories %}
             <li><a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}">{{ category }}</a></li>
         {% endfor %}
+        <li><a href="{{ site.url }}/talk">Talks</a> </li>
     </ul>
 </div>
 <div class="sidebar-module">
