@@ -21,6 +21,8 @@ TEXT fields are a nightmare. For you and for your server. It is slow to retrieve
 
 If you use MySQL with a MyISAM engine, this may not be an issue for you, you can create a `FULLTEXT` index, your only problem is if you want to add a new column, an alter table can take forever, since MySQL creates a new table and copies the old data to the new table. For those who uses MySQL with an InnoDB engine, prepare because, you'll have more issues. Indexes **can't** be `FULLTEXT` and if you do need an index  you must inform the length of it. It defeats the purpose of you doing the search in that field.
 
+> The observation above is **only** true for MySQL 5.5 or below, since version 5.6 MySQL does support `FULLTEXT` indexes on InnoDB
+
 ## My TEXT field is not searchable, I just use it to store a big string
 
 In that case you will only have trouble when it comes the time to add a new column or index to that table. As I said, when executing an `ALTER TABLE` statement, MySQL will create a new table with the new modifications and reinsert the data. Once I did this in a huge table with a TEXT field, it took 2 days. So, be careful.
@@ -85,7 +87,7 @@ CREATE TABLE `options_text` (
 ) Engine=MyISAM DEFAULT CHARSET=utf8;
 ```
 
-That way you can create a `FULLTEXT` index in the table, because it is MyISAM and still be able to work with better data consistency provided by InnoDB.
+That way you can create a `FULLTEXT` index in the table and still be able to work with better data consistency provided by InnoDB. You can use InnoDB engine on the second table too, but it is not needed unless you want to use the constraint in the foreign keys.
 
 To retrieve it, a `INNER JOIN` or `LEFT JOIN` between the two tables:
 
