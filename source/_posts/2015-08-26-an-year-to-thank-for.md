@@ -1,5 +1,5 @@
 ---
-title: An year to thank for
+title: A year to thank for
 draft: false
 date: "2015-08-26"
 author: gabriela
@@ -13,7 +13,7 @@ use:
 - posts_categories
 ---
 
-An year ago I was landing on Schipol airport in Amsterdam to give my first international talk. I didn't know anyone at the time and had decided a couple months before to integrate more in the community and be more vocal about diversity in tech.
+A year ago I was landing on Schiphol airport in Amsterdam to give my first international talk. I didn't know anyone at the time and had decided a couple months before to integrate more in the community and be more vocal about diversity in tech.
 
 There I met wonderful people, since I was not known, to be honest I am still not, I was very intimidated into talking to them, and lots of big names from the PHP community were there. [Kayla Daniels](http://www.twitter.com/kayladnls) definitely broke the shell that surrounded me and helped to be friends with other people like: [Frank de Jonge](http://www.twitter.com/frankdejonge), [Scott Wilcox](http://www.twitter.com/ssx), [Michelle Sanvers](http://www.twitter.com/michellesanvers), [Igor Wiedler](http://www.twitter.com/igorwhilefalse). And many, many other people that slowly I grew on them and them on me.
 
