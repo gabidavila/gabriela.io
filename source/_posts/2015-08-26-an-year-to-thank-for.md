@@ -28,4 +28,4 @@ Another person I can't thank enough is **Kayla**, she reminded me of what a frie
 
 The message I want to pass is: be aware of your actions, we are impacting people, wether you like it or not you may be the role model for someone, and be open to changes, change is good, we learn a lot from it, mostly from ourselves.
 
-<p style="text-align:center"><img src="http://gabriela.io/img/2015/08/du-dudu-edu.jpg" alt="Ed, Edd & Eddy" class="img-thumbnail"></p>
+<p style="text-align:center"><img src="http://gabriela.io/img/2015/08/du-dudu-e-edu.jpg" alt="Ed, Edd & Eddy" class="img-thumbnail"></p>
