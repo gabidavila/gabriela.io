@@ -8,7 +8,7 @@ blog_url: "http://gabriela.io/blog"
 author:
   pic: "http://gabriela.io/img/gabi.jpg"
   name: "Gabriela D'Ávila"
-  title: "Software Engineer, Lego fan."
+  title: "Data Engineer, Lego fan."
   lego: 25054
 
 social:
@@ -37,7 +37,7 @@ blogroll:
     url: "http://www.dev-human.com"
   1:
     name: "weDiversifi"
-    url: "http://wwww.wediversi.fi"
+    url: "http://wwww.wediversi.com"
   2:
     name: "PHP Women"
     url: "http://phpwomen.org"
