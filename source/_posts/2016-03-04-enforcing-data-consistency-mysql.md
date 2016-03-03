@@ -1,6 +1,6 @@
 ---
 title: Enforcing data consistency on MySQL
-draft: false
+draft: true
 date: "2016-03-04"
 author: gabriela
 categories:
@@ -23,9 +23,11 @@ The version of MySQL used on this post is the 5.7.11. As of standard it comes wi
 ```sql
 SELECT @@GLOBAL.sql_mode;
 ```
- Output:
- ```
- ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
- ```
+
+Output:
+
+```
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+```
 
  You can check each one in detail in the [MySQL documentation](http://dev.mysql.com/doc/refman/5.7/en/sql-mode.html#sqlmode_only_full_group_by).

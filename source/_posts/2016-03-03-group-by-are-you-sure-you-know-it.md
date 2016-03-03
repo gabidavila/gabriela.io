@@ -76,16 +76,7 @@ GROUP BY c.user_id;
 
 And this is the result:
 
-```
-+----+---------+---------+---------+---------------------+----+---------------+----------------------+---------+---------------------+
-| id | user_id | post_id | message | created             | id | name          | email                | country | created             |
-+----+---------+---------+---------+---------------------+----+---------------+----------------------+---------+---------------------+
-|  1 |       1 |       1 | NULL    | 2016-03-03 21:20:29 |  1 | Lisa Simpson  | lisa@simpsons.com    | US      | 2016-03-03 20:07:23 |
-|  2 |       2 |       1 | NULL    | 2016-03-03 21:20:39 |  2 | Bart Simpson  | bart@simpsons.com    | US      | 2016-03-03 20:07:28 |
-|  4 |       3 |       1 | NULL    | 2016-03-03 21:20:56 |  3 | Homer Simpson | nobrain@simpsons.com | US      | 2016-03-03 20:07:38 |
-+----+---------+---------+---------+---------------------+----+---------------+----------------------+---------+---------------------+
-3 rows in set (0.00 sec)
-```
+<script src="https://gist.github.com/gabidavila/e3c5a5cdf0882eca0837.js"></script>
 
 Same query running on 5.7.11 gives the following results:
 
@@ -143,16 +134,7 @@ GROUP BY u.email, u.id, u.name, u.country, u.created;
 
 Result for both queries:
 
-```
-+---------+---------------+----------------------+---------+---------------------+---------------------+----------------+
-| user_id | name          | email                | country | registration_date   | last_comment        | total_comments |
-+---------+---------------+----------------------+---------+---------------------+---------------------+----------------+
-|       2 | Bart Simpson  | bart@simpsons.com    | US      | 2016-03-03 20:07:28 | 2016-03-03 21:21:08 |              2 |
-|       1 | Lisa Simpson  | lisa@simpsons.com    | US      | 2016-03-03 20:07:23 | 2016-03-03 21:20:50 |              2 |
-|       3 | Homer Simpson | nobrain@simpsons.com | US      | 2016-03-03 20:07:38 | 2016-03-03 21:20:56 |              1 |
-+---------+---------------+----------------------+---------+---------------------+---------------------+----------------+
-3 rows in set (0.00 sec)
-```
+<script src="https://gist.github.com/gabidavila/b9d05f71fa97548b39c5.js"></script>
 
 In another words, both queries follows [SQL92](http://dev.cs.uni-magdeburg.de/db/sybase9/help/dbugen9/00000284.htm) specification:
 
