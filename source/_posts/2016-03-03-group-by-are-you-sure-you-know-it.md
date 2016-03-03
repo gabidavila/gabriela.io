@@ -14,6 +14,21 @@ use:
 - posts_tags
 - posts_categories
 ---
+## New MySQL version, YAY!
+MySQL 5.7 is full of new functionalities, like virtual columns, virtual indexes and JSON fields! But, it came with some changes to the default configuration. When running:
+
+```sql
+SELECT @@GLOBAL.sql_mode;
+```
+
+We get:
+
+```
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+```
+
+What I want to talk about is the `ONLY_FULL_GROUP_BY` mode. That mode rejects queries where nonaggregated columns are expected but aren't on the `GROUP BY` or `HAVING` clause. Before MySQL 5.7.5, `ONLY_FULL_GROUP_BY` was disabled by default, now it is enabled.
+
 ## You know the drill...
 
 This is a simple statement, people use it everywhere, it shouldn't be that hard to use, right?
@@ -164,3 +179,19 @@ FROM comments c
 WHERE c.post_id = 1
 GROUP BY u.id;
 ```
+
+You can read more details about how MySQL handles `GROUP BY` on their [documentation](http://dev.mysql.com/doc/refman/5.7/en/group-by-handling.html).
+
+## TL;DR;
+
+According to the documentation, this configuration is being enabled by default because `GROUP BY` processing has become more sophisticated to include detection of functional dependencies. It also brings MySQL more close to the best practices for SQL language with the bonus of removing the "magic" element when grouping.
+
+## Disabling ONLY_FULL_GROUP_BY
+
+If you are upgrading your database server and want to avoid any possible breaks you can disable by removing it from your `sql_mode`;
+
+```sql
+SET @@GLOBAL.sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+```
+
+A restart is not necessary, but a reconnection is.
