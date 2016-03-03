@@ -126,4 +126,41 @@ WHERE c.post_id = 1
 GROUP BY u.email, u.id, u.name, u.country, u.created;
 ```
 
-In another words, both queries follows SQL92 specification.
+Result for both queries:
+
+```
++---------+---------------+----------------------+---------+---------------------+---------------------+----------------+
+| user_id | name          | email                | country | registration_date   | last_comment        | total_comments |
++---------+---------------+----------------------+---------+---------------------+---------------------+----------------+
+|       2 | Bart Simpson  | bart@simpsons.com    | US      | 2016-03-03 20:07:28 | 2016-03-03 21:21:08 |              2 |
+|       1 | Lisa Simpson  | lisa@simpsons.com    | US      | 2016-03-03 20:07:23 | 2016-03-03 21:20:50 |              2 |
+|       3 | Homer Simpson | nobrain@simpsons.com | US      | 2016-03-03 20:07:38 | 2016-03-03 21:20:56 |              1 |
++---------+---------------+----------------------+---------+---------------------+---------------------+----------------+
+3 rows in set (0.00 sec)
+```
+
+In another words, both queries follows [SQL92](http://dev.cs.uni-magdeburg.de/db/sybase9/help/dbugen9/00000284.htm) specification:
+
+> The SQL/92 standard for GROUP BY requires the following:
+
+> * A column used in an expression of the SELECT clause must be in the GROUP BY clause. Otherwise, the expression using that column is an aggregate function.
+> * A GROUP BY expression can only contain column names from the select list, but not those used only as arguments for vector aggregates.
+
+> The results of a standard GROUP BY with vector aggregate functions produce one row with one value per group.
+
+In the 5.7.5 version, MySQL also implemented SQL99, which means that if such a relationship exists between name and id, the query is legal. This would be the case, for example, were you group by a primary key or foreign key:
+
+```sql
+SELECT
+  u.id           AS user_id,
+  u.name,
+  u.email,
+  u.country,
+  u.created      AS registration_date,
+  max(c.created) AS last_comment,
+  count(*)       AS total_comments
+FROM comments c
+  INNER JOIN users u ON c.user_id = u.id
+WHERE c.post_id = 1
+GROUP BY u.id;
+```
