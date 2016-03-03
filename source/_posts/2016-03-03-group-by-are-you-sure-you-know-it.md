@@ -48,15 +48,14 @@ CREATE TABLE `comments` (
 ) ENGINE = InnoDB;
 ```
 
-Suppose I want to list the users and the count of how many comments they made. This is the query most people use:
+Suppose I want to list all users that commented on `post_id = 1`:
 
 ```sql
-SELECT
-  u.*,
-  count(*) AS total
-FROM users u
-  INNER JOIN comments c ON c.user_id = u.id
-GROUP BY u.id;
+SELECT *
+FROM comments c
+  INNER JOIN users u ON c.user_id = u.id
+WHERE c.post_id = 1
+GROUP BY c.user_id;
 ```
 
 And this is the result:
@@ -71,3 +70,5 @@ And this is the result:
 +----+---------------+----------------------+---------+---------------------+-------+
 3 rows in set (0.00 sec)
 ```
+
+Same query running on 5.7.11 gives the following results
