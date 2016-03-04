@@ -88,7 +88,7 @@ Same query running on 5.7.11 gives the following results:
 
 What MySQL is complaining about here is this: you grouped rows by `c.user_id`, but the problem is there are more than one result to be retrieved for the `c.id` column. Since you didn't use any aggregators, as `min(c.id)` for instance, it doesn't know which result to bring.
 
-Previous versions of MySQL would solve this "magically". This change is not MySQL being temperamental with you, it is them implementing long old industry standard specifications (SQL92 and SQL99) to the database. To rely on results brought in the previous versions of that query is not smart. Those results are unpredictable and totally arbitrary.
+Previous versions of MySQL would solve this "magically". This change is not MySQL being temperamental with you, it is them implementing long old industry standard specifications (SQL/92 and SQL/99) to the database. To rely on results brought in the previous versions of that query is not smart. Those results are unpredictable and totally arbitrary.
 
 From the [5.6](http://dev.mysql.com/doc/refman/5.6/en/group-by-handling.html) documentation:
 
@@ -136,7 +136,7 @@ Result for both queries:
 
 <script src="https://gist.github.com/gabidavila/b9d05f71fa97548b39c5.js"></script>
 
-In another words, both queries follows [SQL92](http://dev.cs.uni-magdeburg.de/db/sybase9/help/dbugen9/00000284.htm) specification:
+In another words, both queries follows [SQL/92](http://dev.cs.uni-magdeburg.de/db/sybase9/help/dbugen9/00000284.htm) specification:
 
 > The SQL/92 standard for GROUP BY requires the following:
 
@@ -145,7 +145,7 @@ In another words, both queries follows [SQL92](http://dev.cs.uni-magdeburg.de/db
 
 > The results of a standard GROUP BY with vector aggregate functions produce one row with one value per group.
 
-In the 5.7.5 version, MySQL also implemented SQL99, which means that if such a relationship exists between name and id, the query is legal. This would be the case, for example, where you group by a primary key or foreign key:
+In the 5.7.5 version, MySQL also implemented SQL/99, which means that if such a relationship exists between name and id, the query is legal. This would be the case, for example, where you group by a primary key or foreign key:
 
 ```sql
 SELECT
