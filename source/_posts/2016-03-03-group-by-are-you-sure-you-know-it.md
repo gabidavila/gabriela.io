@@ -15,7 +15,7 @@ use:
 - posts_categories
 ---
 ## New MySQL version, YAY!
-MySQL 5.7 is full of new functionalities, like virtual columns, virtual indexes and JSON fields! But, it came with some changes to the default configuration. When running:
+MySQL 5.7 is full of new features, like virtual columns, virtual indexes and JSON fields! But, it came with some changes to the default configuration. When running:
 
 ```sql
 SELECT @@GLOBAL.sql_mode;
@@ -145,7 +145,7 @@ In another words, both queries follows [SQL/92](http://dev.cs.uni-magdeburg.de/d
 
 > The results of a standard GROUP BY with vector aggregate functions produce one row with one value per group.
 
-In the 5.7.5 version, MySQL also implemented SQL/99, which means that if such a relationship exists between name and id, the query is legal. This would be the case, for example, where you group by a primary key or foreign key:
+In the 5.7.5 version, MySQL also implemented SQL/99, which means that if such a relationship exists between `name` and `id`, the query is legal. This would be the case, for example, where you group by a primary key or foreign key:
 
 ```sql
 SELECT
