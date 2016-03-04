@@ -88,7 +88,7 @@ Same query running on 5.7.11 gives the following results:
 
 What MySQL is complaining about here is this: you grouped rows by `c.user_id`, but problem is, there are more than one result to be retrieved for the `c.id` column, since you didn't use any aggregators, as `min(c.id)` for instance, it doesn't know which result to bring.
 
-On previous versions MySQL would solve this "magically". This is not MySQL being temperamental with you, it is them implementing SQL92 and SQL99 specifications to the database. To rely on results brought in the previous versions of that query is not smart. That result is unpredictable and totally arbitrary.
+On previous versions MySQL would solve this "magically". This change is not MySQL being temperamental with you, it is them implementing old long industry standard specifications (SQL92 and SQL99) to the database. To rely on results brought in the previous versions of that query is not smart. That result is unpredictable and totally arbitrary.
 
 From the [5.6](http://dev.mysql.com/doc/refman/5.6/en/group-by-handling.html) documentation:
 
