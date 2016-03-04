@@ -27,7 +27,7 @@ We get:
 ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
 ```
 
-What I want to talk about is the `ONLY_FULL_GROUP_BY` mode. This mode rejects queries where nonaggregated columns are expected but aren't on the `GROUP BY` or `HAVING` clause. Before MySQL 5.7.5, `ONLY_FULL_GROUP_BY` was disabled by default, now it is enabled.
+What I want to talk about is the `ONLY_FULL_GROUP_BY` mode. This mode rejects queries where nonaggregated columns are expected, but aren't on the `GROUP BY` or `HAVING` clause. Before MySQL 5.7.5, `ONLY_FULL_GROUP_BY` was disabled by default, now it is enabled.
 
 ## You know the drill...
 
@@ -86,19 +86,19 @@ Same query running on 5.7.11 gives the following results:
 
 ## What does it mean?
 
-What MySQL is complaining about here is this: you grouped rows by `c.user_id`, but problem is, there are more than one result to be retrieved for the `c.id` column, since you didn't use any aggregators, as `min(c.id)` for instance, it doesn't know which result to bring.
+What MySQL is complaining about here is this: you grouped rows by `c.user_id`, but the problem is there are more than one result to be retrieved for the `c.id` column. Since you didn't use any aggregators, as `min(c.id)` for instance, it doesn't know which result to bring.
 
-On previous versions MySQL would solve this "magically". This change is not MySQL being temperamental with you, it is them implementing old long industry standard specifications (SQL92 and SQL99) to the database. To rely on results brought in the previous versions of that query is not smart. That result is unpredictable and totally arbitrary.
+Previous versions of MySQL would solve this "magically". This change is not MySQL being temperamental with you, it is them implementing long old industry standard specifications (SQL92 and SQL99) to the database. To rely on results brought in the previous versions of that query is not smart. Those results are unpredictable and totally arbitrary.
 
 From the [5.6](http://dev.mysql.com/doc/refman/5.6/en/group-by-handling.html) documentation:
 
 > MySQL extends the standard SQL use of GROUP BY so that the select list can refer to nonaggregated columns not named in the GROUP BY clause. This means that the preceding query is legal in MySQL. You can use this feature to get better performance by avoiding unnecessary column sorting and grouping. However, this is useful primarily when all values in each nonaggregated column not named in the GROUP BY are the same for each group. **The server is free to choose any value from each group**, so unless they are the same, the values chosen are indeterminate. Furthermore, the selection of values from each group cannot be influenced by adding an ORDER BY clause. Result set sorting occurs after values have been chosen, and ORDER BY does not affect which values within each group the server chooses.
 
-## How I fix it?
+## How do I fix it?
 
 It will make your query more verbose, but it will make it _right_. There are two ways of doing this.
 
-One way is using aggregators in the fields you need retrieving and that will be grouped by the `email` field, for instance.
+One way is using aggregators in the fields you need to retrieve and that will be grouped by the `email` field, for instance.
 
 ```sql
 SELECT
@@ -115,7 +115,7 @@ WHERE c.post_id = 1
 GROUP BY u.email;
 ```
 
-Another way is to name those fields that will be unique in the `GROUP BY` clause:
+Another way is to name the fields that will be unique in the `GROUP BY` clause:
 
 ```sql
 SELECT
@@ -145,7 +145,7 @@ In another words, both queries follows [SQL92](http://dev.cs.uni-magdeburg.de/db
 
 > The results of a standard GROUP BY with vector aggregate functions produce one row with one value per group.
 
-In the 5.7.5 version, MySQL also implemented SQL99, which means that if such a relationship exists between name and id, the query is legal. This would be the case, for example, were you group by a primary key or foreign key:
+In the 5.7.5 version, MySQL also implemented SQL99, which means that if such a relationship exists between name and id, the query is legal. This would be the case, for example, where you group by a primary key or foreign key:
 
 ```sql
 SELECT
@@ -162,11 +162,11 @@ WHERE c.post_id = 1
 GROUP BY u.id;
 ```
 
-You can read more details about how MySQL handles `GROUP BY` on their [documentation](http://dev.mysql.com/doc/refman/5.7/en/group-by-handling.html).
+You can read more details about how MySQL handles `GROUP BY` in their [documentation](http://dev.mysql.com/doc/refman/5.7/en/group-by-handling.html).
 
 ## TL;DR;
 
-According to the documentation, this configuration is being enabled by default because `GROUP BY` processing has become more sophisticated to include detection of functional dependencies. It also brings MySQL more close to the best practices for SQL language with the bonus of removing the "magic" element when grouping. Having that, grouping fields are no longer arbitrary selected.
+According to the documentation, this configuration is being enabled by default because `GROUP BY` processing has become more sophisticated to include detection of functional dependencies. It also brings MySQL closer to the best practices for SQL language with the bonus of removing the "magic" element when grouping. Having that, grouping fields are no longer arbitrary selected.
 
 ## Disabling ONLY_FULL_GROUP_BY
 
