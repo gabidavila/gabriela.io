@@ -27,7 +27,7 @@ We get:
 ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
 ```
 
-What I want to talk about is the `ONLY_FULL_GROUP_BY` mode. That mode rejects queries where nonaggregated columns are expected but aren't on the `GROUP BY` or `HAVING` clause. Before MySQL 5.7.5, `ONLY_FULL_GROUP_BY` was disabled by default, now it is enabled.
+What I want to talk about is the `ONLY_FULL_GROUP_BY` mode. This mode rejects queries where nonaggregated columns are expected but aren't on the `GROUP BY` or `HAVING` clause. Before MySQL 5.7.5, `ONLY_FULL_GROUP_BY` was disabled by default, now it is enabled.
 
 ## You know the drill...
 
@@ -86,9 +86,9 @@ Same query running on 5.7.11 gives the following results:
 
 ## What does it mean?
 
-What MySQL is complaining about here is this: you grouped lines by `c.user_id`, but problem is, there are more than one result to be retrieved for the `c.id` column, since you didn't use any aggregators, as `min(c.id)` for instance, it doesn't know which result to bring.
+What MySQL is complaining about here is this: you grouped rows by `c.user_id`, but problem is, there are more than one result to be retrieved for the `c.id` column, since you didn't use any aggregators, as `min(c.id)` for instance, it doesn't know which result to bring.
 
-On previous versions MySQL would solve this "magically". This is not MySQL being temperamental with you, it is them implementing SQL92 and SQL99 specifications to the database. To rely on results brought in the previous versions of that query is not smart. That result is unpredicable and totally arbitrary.
+On previous versions MySQL would solve this "magically". This is not MySQL being temperamental with you, it is them implementing SQL92 and SQL99 specifications to the database. To rely on results brought in the previous versions of that query is not smart. That result is unpredictable and totally arbitrary.
 
 From the [5.6](http://dev.mysql.com/doc/refman/5.6/en/group-by-handling.html) documentation:
 
@@ -166,7 +166,7 @@ You can read more details about how MySQL handles `GROUP BY` on their [documenta
 
 ## TL;DR;
 
-According to the documentation, this configuration is being enabled by default because `GROUP BY` processing has become more sophisticated to include detection of functional dependencies. It also brings MySQL more close to the best practices for SQL language with the bonus of removing the "magic" element when grouping.
+According to the documentation, this configuration is being enabled by default because `GROUP BY` processing has become more sophisticated to include detection of functional dependencies. It also brings MySQL more close to the best practices for SQL language with the bonus of removing the "magic" element when grouping. Having that, grouping fields are no longer arbitrary selected.
 
 ## Disabling ONLY_FULL_GROUP_BY
 
