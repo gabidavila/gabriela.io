@@ -17,8 +17,6 @@ use:
 - posts_categories
 ---
 
-# `NOT NULL` all the things!
-
 Different types of languages deal with this "value" in diverse ways. You can have a more comprehensive list of what `NULL` can mean on [this website](http://c2.com/cgi/wiki?WhatIsNull). What I like to think about `NULL` is along the lines of _invalid_, as if some sort of garbage is stored there. It doesn't mean it's empty, it's just mean that something is there, and it has no value to you.
 
 Databases deal when storing this type in a similar way, [PostgreSQL](http://www.postgresql.org/docs/9.5/static/functions-comparison.html) treats it as "_unknown_" while [MySQL](http://dev.mysql.com/doc/refman/5.7/en/null-values.html) treats it as "_no data_".
