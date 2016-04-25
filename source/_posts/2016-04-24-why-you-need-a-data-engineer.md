@@ -57,4 +57,4 @@ You know that feature you want to implement? Talk to us first. You can design th
 
 Do not isolate us on your team, we need support from your DevOps, we need the engineers to be our partners and to collaborate on problem solving; we are not only be there to run the queries they deem necessary because they don’t have access to the database. If you want to have that wicked fast search by category on your ecommerce, I guarantee you that `LIKE` is not the fast approach, The DevOps will help us setup the environment for the platform to take the best advantage, many developers may foreseen this, but most don’t. Again, we are the _bridge_. This is our job.
 
-You can have another view of this on this blogpost: [The different data science roles in the industry].
+You can have another view of this on this blogpost: [The different data science roles in the industry](http://www.kdnuggets.com/2015/11/different-data-science-roles-industry.html)..
