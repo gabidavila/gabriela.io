@@ -15,6 +15,8 @@ use:
 - posts_categories
 ---
 
+<p style="align:center"><img src="http://i.stack.imgur.com/yZQgZ.gif" alt="Dilbert" class="img-thumbnail"></p>
+
 Tech evolves quickly. When the buzzword Big Data started showing up more and more, the market was in need of people able to analyse and give meaning to what was collected. For instance, an article published in 2012 by Harvard Business Review was entitled: [Data Scientist: The Sexiest Job of the 21st Century](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century/).
 
 Today we have **DBA**, **Data Scientist**, **Data Engineer**, **Data Analyst**, a wealth of options with the "Data" as prefix. More often than not, people put everyone in the same basket and assume everyone knows and has the same set of skills.
