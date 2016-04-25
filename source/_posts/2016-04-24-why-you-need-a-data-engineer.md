@@ -1,5 +1,5 @@
 ---
-title: Why your team needs a Data Engineer
+title: Why you need a Data Engineer
 draft: false
 date: "2016-04-24"
 author: gabriela
