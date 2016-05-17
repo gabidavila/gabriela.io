@@ -30,6 +30,7 @@ $ mysqldump -h localhost -u root -p --extended-insert --quick --no-create-info m
 ```
 
 A bit more about this line:
+
 * `--extended-insert`: it makes sure that it is not one `INSERT` per line, meaning a single statement can have dozens of rows.
 * `--quick`: useful when dumping large tables, by default MySQL reads the whole table in memory then dumps into a file, that way the data is streamed without consuming much memory.
 * `--no-create-info`: this means only the data is being exported, no `CREATE TABLE` statements will be added
