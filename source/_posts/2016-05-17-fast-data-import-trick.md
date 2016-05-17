@@ -15,7 +15,7 @@ use:
 - posts_categories
 ---
 
-A few weeks ago my friend [Frank de Jonge](http://www.twitter.com/frankdejonge) told me he managed to improve an import into a MySQL server down from more than 10 hours to 16 minutes. According to him it had something to do with one of the field types (too long fields to really small data) and the amount of indexes and constraints in the tables. We were talking about 1 million records here. He wondered if it was possible to make it even faster.
+A few weeks ago my friend [Frank de Jonge](http://www.twitter.com/frankdejonge) told me he managed to improve an import into a MySQL server down from more than 10 hours to 16 minutes. According to him it had to do with several field types (too long fields to really small data), the amount of indexes, and constraints on the tables. We were talking about 1 million records here. He wondered if it was possible to make it even faster.
 
 ## The basics 
 
