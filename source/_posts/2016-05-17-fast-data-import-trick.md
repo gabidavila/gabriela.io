@@ -19,7 +19,7 @@ A few weeks ago my friend [Frank de Jonge](http://www.twitter.com/frankdejonge) 
 
 ## The basics 
 
-Turns out there are many ways of inmporting data into a database, it all depends where are you getting the data from and where you want to put it. Let me give you a bit more context: you may want to get data from a legacy application that exports into CSV to your database server or even data from different servers.
+Turns out there are many ways of importing data into a database, it all depends where are you getting the data from and where you want to put it. Let me give you a bit more context: you may want to get data from a legacy application that exports into CSV to your database server or even data from different servers.
 
 If you are pulling data from a MySQL table into another MySQL table (lets assume they are into different servers) you might as well use `mysqldump`.
 
