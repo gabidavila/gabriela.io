@@ -6,6 +6,7 @@ dependencies:
     - vendor
     - ~/.composer/cache
     - composer install --no-scripts --no-progress
+  post:
     - ./bin/install.sh
 test:
   pre:
