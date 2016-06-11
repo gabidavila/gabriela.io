@@ -1,11 +1,15 @@
 <?php
+use Ramsey\Sculpin\Bundle\CodeBlockBundle\RamseySculpinCodeBlockBundle;
+use Sculpin\Bundle\SculpinBundle\HttpKernel\AbstractKernel;
 
-class SculpinKernel extends \Sculpin\Bundle\SculpinBundle\HttpKernel\AbstractKernel
-{
-    protected function getAdditionalSculpinBundles()
+if (!class_exists('SculpinKernel')) {
+    class SculpinKernel extends AbstractKernel
     {
-        return array(
-
-        );
+        protected function getAdditionalSculpinBundles()
+        {
+            return [
+                RamseySculpinCodeBlockBundle::class,
+            ];
+        }
     }
 }
