@@ -1,0 +1,29 @@
+
+{
+    "require": {
+        "sculpin/sculpin": "2.*@dev",
+
+        "dflydev/embedded-composer-console": "@dev",
+        "dflydev/embedded-composer-core": "@dev",
+        "composer/composer": "@dev",
+        "dflydev/github-gist-twig-extension": "v2.0.1",
+
+        "wyrihaximus/html-compress-sculpin": "^1.0",
+        "cocur/slugify": "@stable",
+
+        "components/bootstrap": "~2.3.1",
+        "components/jquery": "~1.9.1",
+        "components/highlightjs": "~7.3.0",
+        "ramsey/sculpin-codeblock": "~1.0"
+    },
+    "config": {
+        "component-dir": "source/components"
+    },
+    "require-dev": {
+        "phpro/grumphp": "^0.9.0",
+        "phpunit/phpunit": "^5.3"
+    },
+    "autoload": {
+        "files": ["app/SculpinKernel.php"]
+    }
+}
