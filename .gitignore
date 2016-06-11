@@ -16,3 +16,4 @@ node_modules
 !/source/css/style.css
 /source/js
 /source/img/flags
+vendor
