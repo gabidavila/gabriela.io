@@ -17,7 +17,7 @@ test:
     - cp /tmp/junit.xml $CIRCLE_TEST_REPORTS/phpunit/junit.xml
 deployment:
   production:
-    tag: /.*/
+    branch: master
     commands:
       - vendor/bin/sculpin generate --env=prod || ( echo "Could not generate the site" && exit )
       - aws s3 sync output_prod/ s3://gabriela.io/
