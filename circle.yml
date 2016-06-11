@@ -6,6 +6,7 @@ dependencies:
     - vendor
     - ~/.composer/cache
     - composer install --no-scripts --no-progress
+    - ./bin/install.sh
 test:
   pre:
     - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
