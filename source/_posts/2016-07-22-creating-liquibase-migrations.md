@@ -18,7 +18,7 @@ use:
 
 # Liquibase
 
-[Liquibase](www.liquibase.org) is a versioning tool for databases. Currently is in the 3.5 version and it is installed as a JAR. It has been in the market since 2006, and recently completed its 10th anniversary. In it's feature list we have:
+[Liquibase](www.liquibase.org) is a versioning tool for databases. Currently, it's on version 3.5 and is installed as a JAR. It has been on the market since 2006, and recently completed its 10th anniversary. In its feature list we have:
 
 - Code branching and merging
 - Multiple database types
@@ -32,16 +32,16 @@ use:
 
 ## Why you need it?
 
-Some frameworks comes with built-in solutions out of the box like [Eloquent](https://laravel.com/docs/5.2/eloquent) and [Doctrine](http://www.doctrine-project.org/). There is nothing wrong in using that when you have only DB per project, but when you have multiple systems, it starts to get complicated.
+Some frameworks comes with built-in solutions out of the box like [Eloquent](https://laravel.com/docs/5.2/eloquent) and [Doctrine](http://www.doctrine-project.org/). There is nothing wrong with using something like that when you have only one DB per project, but when you have multiple systems, it starts to get complicated.
 
-Since Liquibase works as a versioning tool, you can branch like a normal code on github and merge as needed. You have contexts, which means changes can be applied to specific environments only and tagging capabilities to be able to rollback.
+Since Liquibase works as a versioning tool, you can branch and merge as needed (like you would with code in git). You have contexts, which means changes can be applied to specific environments only, and tagging capabilities allow you to perform rollbacks.
 
-Rollback is a tricky thing, you can either do an automatically rollback or define a script, useful when deal with MySQL for instance where **DDL** changes are **NOT** transactional.
+A rollback is a tricky thing; you can either do an automatic rollback or define a script.  Scripted rollbacks are useful when dealing with MySQL, for instance, where **DDL** changes are **NOT** transactional.
 
 ## Guidelines for changelogs and migrations
 
 - **MUST** be written using the `JSON` format. Exceptions are `changes/legacy/base.xml` and `changes/legacy/base_procedures_triggers.sql`.
-- **MUST NOT** be edited. If a new column is to be added, a **new** migration file must be created and the file **MUST** be added **AFTER** the las run transaction.
+- **MUST NOT** be edited. If a new column is to be added, a **new** migration file must be created and the file **MUST** be added **AFTER** the last run transaction.
 
 ## Branching
 
@@ -68,15 +68,15 @@ Rules:
 - **DO NOT** rebase the main branches;
 - Custom branch **MUST** be deleted after merged into `production`.
 
-The downside of this approach is the diverging state between the branches. Current process is to from time to time compare the branches and manually check the diffs for unplanned discrepancies.
+The downside of this approach is the diverging state between the branches. Current process is to, from time to time, compare the branches and manually check the diffs for unplanned discrepancies.
 
 ## Procedures for converting a legacy database to Liquibase migrations
 
-Some projects are complete monoliths. More than one application connects to it, and this is not a good practice, if you do that I recommend you treating the database sourcing as in its own repository and not together with your application.
+Some projects are complete monoliths. More than one application connects to it, and this is not a good practice.  If you are working with that sort of project, I recommend you treating the database sourcing as its own repository, and not together with your application.
 
 ## Writing migrations
 
-This is a way I found for keeping the structure in reasonable sense. Suggestions are welcome.
+This is a way I found for keeping the structure reasonably sensible. Suggestions are welcome.
 
 ## 1\. Create the property file
 
@@ -94,7 +94,7 @@ The `JAR` files in the classpath can be manually downloaded or installed though 
 
 ## Create the Migration file
 
-You can choos e between different formats, I chose to use JSON, in this instance I will be running this SQL:
+You can choose between different formats.  I chose to use JSON.  In this instance I will be running this SQL:
 
 <script src="https://gist.github.com/gabidavila/47cfc3e6165dbeb0782e639e21a9399a.js">
 </script>
@@ -124,12 +124,12 @@ For each new change you add it to the end of the `databaseChangeLog` array.
 
 ## Run it
 
-To run, just simply do:
+To run, execute:
 
 ```sh
 $ liquibase --changeLogFile=changes/changelog.json migrate
 ```
 
-Don't worry if you run it twice, the change only happens once.
+**Don't worry if you run it twice, the change only happens once**.
 
-Next post is how to add a legacy DB into Liquibase.
+Next post will cover how to add a legacy DB into Liquibase.
