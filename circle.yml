@@ -24,5 +24,5 @@ deployment:
   development:
     branch: dev
     commands:
-      - vendor/bin/sculpin generate || ( echo "Could not generate the dev site" && exit )
-      - aws s3 sync output_dev/ s3://dev.gabriela.io/
+      - vendor/bin/sculpin generate --env=prod || ( echo "Could not generate the dev site" && exit )
+      - aws s3 sync output_prod/ s3://dev.gabriela.io/
