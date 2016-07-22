@@ -133,3 +133,5 @@ $ liquibase --changeLogFile=changes/changelog.json migrate
 Don't worry if you run it twice, the change only happens once.
 
 Next post is how to add a legacy DB into Liquibase.
+
+To learn how to go deeper into Liquibase formats and documentation, access [this link](http://www.liquibase.org/documentation/).
