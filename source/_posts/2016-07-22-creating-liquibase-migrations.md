@@ -60,7 +60,7 @@ Steps:
 
 Example:
 
-![Liquibase](img/2016/07/liquibase.png)
+![Liquibase]({{site.url}}/img/2016/07/liquibase.png)
 
 Rules:
 
