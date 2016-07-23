@@ -1,7 +1,7 @@
 ---
 title: LAMP: Desenvolvendo Além do Trivial
 author: gabriela
-city: São PAulo
+city: São Paulo
 country: BR
 date: 2015-08-08
 conference: Locaweb + PHPSP
