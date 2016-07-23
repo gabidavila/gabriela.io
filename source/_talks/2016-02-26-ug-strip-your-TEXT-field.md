@@ -1,5 +1,5 @@
 ---
-title: Strip your TEXT fields
+title: UG: Strip your TEXT fields
 author: gabriela
 city: Exeter
 country: GB
