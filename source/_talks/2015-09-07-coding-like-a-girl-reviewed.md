@@ -1,8 +1,8 @@
 ---
-title: Coding Like a Girl
+title: Coding Like a Girl - Reviewed
 author: gabriela
 city: Austin
-country: USA
+country: US
 date: 2015-09-07
 conference: Djangocon 2015
 slideshare_link: http://www.slideshare.net/gabidavila/coding-like-a-girl-52604171
