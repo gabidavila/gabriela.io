@@ -11,7 +11,7 @@
                             class="fa fa-calendar"></i> {{ page.date|date(site.default_date_format) }}</span>
                 <span class="label label-warning black"><i class="fa fa-user"></i> {{ page.author }}</span>
                 <span class="label label-danger darkblue">{{ page.city }} - {{ page.country }} &nbsp;&nbsp;<img
-                            src="/img/flags/{{ page.country | lower }}.png" alt="{{ page.country }}"></span>
+                            src="({{site.url}}/img/flags/{{ page.country | lower }}.png" alt="{{ page.country }}"></span>
             </p>
             <blockquote class="conference-title"><b>Conference: </b> {{ page.conference }}</blockquote>
             {{ page.blocks.content|raw }}
@@ -36,6 +36,10 @@
                         class="fa fa-external-link"></i> {{ page.joindin }}</a>
             {% endif %}
 
+            {% if page.video %}
+                <b>Video</b>: <a href="{{ page.video }}" rel="video of {{ page.title }}"><i
+                        class="fa fa-external-link"></i> {{ page.video }}</a>
+            {% endif %}
         </div>
         <!-- /.talks-entry -->
     </article>
