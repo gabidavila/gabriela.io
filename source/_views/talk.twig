@@ -11,7 +11,7 @@
                             class="fa fa-calendar"></i> {{ page.date|date(site.default_date_format) }}</span>
                 <span class="label label-warning black"><i class="fa fa-user"></i> {{ page.author }}</span>
                 <span class="label label-danger darkblue">{{ page.city }} - {{ page.country }} &nbsp;&nbsp;<img
-                            src="({{site.url}}/img/flags/{{ page.country | lower }}.png" alt="{{ page.country }}"></span>
+                            src="{{site.url}}/img/flags/{{ page.country | lower }}.png" alt="{{ page.country }}"></span>
             </p>
             <blockquote class="conference-title"><b>Conference: </b> {{ page.conference }}</blockquote>
             {{ page.blocks.content|raw }}
