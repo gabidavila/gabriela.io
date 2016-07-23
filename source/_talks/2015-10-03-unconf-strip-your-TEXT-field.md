@@ -3,7 +3,7 @@ title: Strip your TEXT fields
 author: gabriela
 city: Manchester
 country: GB
-date: 2016-10-03
+date: 2015-10-03
 conference: PHPNW 2015
 slideshare_link: http://www.slideshare.net/gabidavila/strip-your-text-fields-exeter-web-feb2016
 slideshare_id: 53490268

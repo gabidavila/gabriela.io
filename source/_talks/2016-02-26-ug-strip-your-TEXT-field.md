@@ -3,7 +3,7 @@ title: Strip your TEXT fields
 author: gabriela
 city: Exeter
 country: GB
-date: 2016-03-25
+date: 2016-02-25
 conference: Tech Exeter Feb 2015
 slideshare_link: http://www.slideshare.net/gabidavila/strip-your-text-fields-exeter-web-feb2016
 slideshare_id: 58725899
