@@ -1,5 +1,5 @@
 ---
-title: Strip your TEXT fields
+title: Unconf: Strip your TEXT fields
 author: gabriela
 city: Manchester
 country: GB
