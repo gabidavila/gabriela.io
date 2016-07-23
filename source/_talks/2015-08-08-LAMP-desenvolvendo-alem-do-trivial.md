@@ -6,7 +6,7 @@ country: BR
 date: 2015-08-08
 conference: Locaweb + PHPSP
 slideshare_link: http://www.slideshare.net/gabidavila/lamp-desenvolvendo-alm-do-trivial
-slideshare_id: 44887405
+slideshare_id: 51413763
 thumbnail: /img/talk/phpsp_logo.png
 joindin: https://joind.in/talk/a2a32
 use:
