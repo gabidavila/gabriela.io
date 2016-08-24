@@ -6,10 +6,18 @@
         <p><strong>{{ site.author.name }}</strong><br>{{ site.author.title }}</p>
     </div>
     <hr>
-    <p>I've been working with technology for a while (I am <b>not</b> sharing my age!), and I love it! I
-        majored in Digital Game Development by <a href="//fatec.br/" class="link-white"
-                                                  title="Factec">FATEC</a>. But that is not my occupation: I
-        work as a Data Engineer, for more information you can access my Linkedin Profile.</p>
+    <p>Hi, I am Gabi! I am a Data Engineer. What does it mean? Well, it means that I am the person
+        Data Scientists work with to ensure that the data they work with is stored properly,
+        retrieved effortlessly and that their large datasets have meaning.</p>
+
+    <p> As an experienced Software Engineer, I have chosen to focus on databases (in all shapes, sizes and
+        flavors!). </p>
+
+    <p>I have very strong ties to the open source community and enjoy speaking at events and user groups around the
+        world.
+
+    <p> Are you into PostgreSQL, MySQL, MongoDB, Elasticsearch and such?
+        Get in touch with me! I always look forward to learning new things and helping people with database issues.</p>
     <hr>
     <p>Passions: technology, legos (I am a proud owner of {{ site.author.lego }} pieces), HBO series and
         opensource.</p>
@@ -20,14 +28,14 @@
         {% for category,posts in data.posts_categories %}
             <li><a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}">{{ category }}</a></li>
         {% endfor %}
-        <li><a href="{{ site.url }}/talk">Talks</a> </li>
+        <li><a href="{{ site.url }}/talk">Talks</a></li>
     </ul>
 </div>
 <div class="sidebar-module">
     <div class="form-group">
         <div class="input-group">
             <input type="text" class="form-control">
-                    <span class="input-group-btn">
+            <span class="input-group-btn">
                       <button class="btn btn-default" type="button">search</button>
                     </span>
         </div>
